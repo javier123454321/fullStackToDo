@@ -18,7 +18,7 @@ class QueryBuilder{
     }
 
     public function updateTask($taskDescription){
-        $statement = $this->pdo->prepare("INSERT INTO todos (description) VALUES ('".$taskName."')");
+        $statement = $this->pdo->prepare("INSERT INTO todos (description) VALUES ('".$taskDescription."')");
         
         return $statement-> execute();
 

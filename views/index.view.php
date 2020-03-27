@@ -23,9 +23,8 @@
                 
             <?php endforeach ?>
         </ul>
-        <?= var_dump($_POST) ?>
         <div class="p-3 form-group">
-            <form action="POST" class="row justify-content-between">
+            <form action="/../src/updateTask.php" class="row justify-content-between">
                 <input class="form-text p-2 col-9" type="text" name="newTask" id="newTask" placeholder="Write a new task...">
                 <input type="submit" class="btn btn-secondary justify-self-end"> 
             </form>
