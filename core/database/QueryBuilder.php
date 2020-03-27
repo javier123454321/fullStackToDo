@@ -16,4 +16,11 @@ class QueryBuilder{
         return $statement -> fetchAll(PDO::FETCH_CLASS, $intoClass);
 
     }
+
+    public function updateTask($taskDescription){
+        $statement = $this->pdo->prepare("INSERT INTO todos (description) VALUES ('".$taskName."')");
+        
+        return $statement-> execute();
+
+    }
 }

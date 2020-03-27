@@ -1,8 +1,6 @@
 <?php
 
-require (__DIR__.'/../config.php');
-
-Class Connection{
+class DBConn{
     
     public static function make($CONFIG){
 
