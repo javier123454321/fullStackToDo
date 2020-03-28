@@ -17,8 +17,12 @@ class QueryBuilder{
 
     }
 
-    public function updateTask($taskDescription){
-        $statement = $this->pdo->prepare("INSERT INTO todos (description) VALUES ('".$taskDescription."')");
+    public function insert($table, $fields, $parameters){
+        $sql = sprintf(
+            "INSERT INTO %s (%s) VALUES ('%s')", $table, $fields, $parameters
+        );
+
+        $statement = $this->pdo->prepare($sql);
         
         return $statement-> execute();
 
