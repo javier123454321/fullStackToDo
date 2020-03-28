@@ -4,24 +4,8 @@
 <div class="container d-flex justify-content-center mt-5">
     <div class="col-lg-5 col-sm-10 card">
         <h3 class="card-header">To Do Items:</h3>
-        <ul class="list-group list-group-flush">
-            <?php foreach ($tasks as $task) :?>
-
-                <li class="list-group-item">
-
-                    <?php if($task -> completed) :?>
-                        <strike>
-                    <?php endif ?>
-
-                    <?= $task -> description ?>
-
-                    <?php if($task -> completed) :?>
-                        </strike>
-                    <?php endif ?>
-                    
-                </li> 
-                
-            <?php endforeach ?>
+        <ul id="taskList" class="list-group list-group-flush">
+            
         </ul>
         <div class="p-3 form-group">
             <form method="POST" action="/../controllers/taskFunctions/updateTask.php" class="row justify-content-between">
@@ -33,4 +17,5 @@
 </div> 
 
 </body>
+<script src="../src/index.js"></script>
 </html>
