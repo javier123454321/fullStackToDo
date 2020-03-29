@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
-</head>
-    <body>
-        <h1>About</h1>
-    </body>
-</html>
+<h1>About</h1>
+<form action="names">
+    <input type="text" name="Name">
+    <input type="submit">
+</form>

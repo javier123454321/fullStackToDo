@@ -19,7 +19,7 @@ class QueryBuilder{
 
     public function insert($table, $fields, $parameters){
         $sql = sprintf(
-            "INSERT INTO %s (%s) VALUES ('%s')", $table, $fields, $parameters
+            "INSERT INTO %s (%s) VALUES ('%s')", $table, $fields, implode(', ',$parameters)
         );
 
         $statement = $this->pdo->prepare($sql);
