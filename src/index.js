@@ -3,18 +3,28 @@ let app = new Vue({
     data:{
         isLoaded: false,
         tasks: [],
+        newTask: ""
         },
 
     methods:{ 
+        updateTask: function(){
+            fetch(`../controllers/taskFunctions/updateTask.php`, {
+                method: 'POST',
+                headers: {'Content-Type':'application/x-www-form-urlencoded'},
+                body: `newTask=${this.newTask}`
+            }).then((response) => this.fetchTasks())
+        },
+        fetchTasks: async function(){
+            fetch(`../controllers/taskFunctions/getTask.php `)
+                .then((response) => response.json())
+                .then((data) => {
+                    this.tasks = data;
+                    this.isLoaded = true;
+                })
+            }
     },
     mounted() {
-        fetch(`../controllers/taskFunctions/getTask.php `)
-            .then((response) => response.json())
-            .then((data) => {
-                this.tasks = data;
-                this.isLoaded = true;
-            console.log('Success:', data);
-            })
+            this.fetchTasks();
         }
 })
 
