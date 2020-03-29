@@ -1,8 +1,7 @@
 <?php
+require_once (__DIR__.'/../vendor/autoload.php');
 
 $config = require 'config.php';
-require 'database/DBConnection.php';
-require 'database/QueryBuilder.php';
 
 $Connect = new DBConn();
 $Connect = $Connect -> make($config['database']);
