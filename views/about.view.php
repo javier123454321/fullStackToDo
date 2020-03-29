@@ -1,5 +1,5 @@
 <h1>About</h1>
-<form action="names">
+<form method="POST" action="names">
     <input type="text" name="Name">
     <input type="submit">
 </form>

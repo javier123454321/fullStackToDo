@@ -1,19 +1,25 @@
 <?php
 
 class Router{
-    protected $routes = [];
+    protected $routes = [
+        'GET' => [],
+        'POST' => []
+    ];
 
-    public function define($routes){
-        $this -> routes = $routes;
+    public function get($uri, $controller){
+        $this -> routes['GET'][$uri] = $controller;
     }
-
-    public function direct($uri){
-        if(array_key_exists($uri, $this -> routes)){
-            return $this->routes[$uri];
+    
+    public function post($uri, $controller){
+        $this -> routes['POST'][$uri] = $controller;
+    }
+    
+    public function direct($uri, $request_type){
+        if(array_key_exists($uri, $this -> routes[$request_type])){
+            return $this->routes[$request_type][$uri];
         }
         else{
-            // return 'controllers/oops.php';
-            return $uri;
+            return 'controllers/oops.php';
         }
     }
 }

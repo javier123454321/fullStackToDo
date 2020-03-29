@@ -1,4 +1,4 @@
 i<?php
 
-echo "<pre>".var_dump($_SERVER)."</pre>";
+echo "<pre>".var_dump($_POST)."</pre>";
 die();

@@ -1,8 +1,7 @@
 <?php
 
-$router -> define([
-    '/'=> 'controllers/index.php',
-    '/about' => 'controllers/about.php',
-    '/contact' => 'controllers/contact.php',
-    '/sysInfo' => 'controllers/system.php'
-]);
+$router -> get('/', 'controllers/index.php');
+$router -> get('/about', 'controllers/about.php');
+$router -> get('/contact', 'controllers/contact.php');
+$router -> get('/sysInfo', 'controllers/system.php');
+$router -> post('/names', 'controllers/name.php');
