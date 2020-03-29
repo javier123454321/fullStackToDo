@@ -12,7 +12,10 @@ let app = new Vue({
                 method: 'POST',
                 headers: {'Content-Type':'application/x-www-form-urlencoded'},
                 body: `newTask=${this.newTask}`
-            }).then((response) => this.fetchTasks())
+            }).then((response) => {
+                this.fetchTasks();
+                this.newTask="";
+                })
         },
         fetchTasks: async function(){
             fetch(`../controllers/taskFunctions/getTask.php `)
